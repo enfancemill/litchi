@@ -138,3 +138,9 @@ EMAIL_PORT = 25
 EMAIL_HOST_USER = 'username@example.com'
 EMAIL_HOST_PASSWORD = 'password'
 EMAIL_USE_TLS = False
+
+
+# Auth
+# https://docs.djangoproject.com/en/1.11/ref/settings/#auth
+
+AUTH_USER_MODEL = 'users.Member'
