@@ -144,3 +144,7 @@ EMAIL_USE_TLS = False
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth
 
 AUTH_USER_MODEL = 'users.Member'
+
+AUTHENTICATION_BACKENDS = (
+    'app.users.views.EmailModelBackend',
+)
