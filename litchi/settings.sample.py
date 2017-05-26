@@ -146,5 +146,5 @@ EMAIL_USE_TLS = False
 AUTH_USER_MODEL = 'users.Member'
 
 AUTHENTICATION_BACKENDS = (
-    'app.users.views.EmailModelBackend',
+    'utils.auth_backends.EmailAuthModelBackend',
 )
