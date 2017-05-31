@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'captcha',
     'app.users.apps.UsersConfig',
+    'app.session.apps.SessionConfig',
 ]
 
 MIDDLEWARE = [
@@ -146,5 +148,18 @@ EMAIL_USE_TLS = False
 AUTH_USER_MODEL = 'users.Member'
 
 AUTHENTICATION_BACKENDS = (
-    'utils.auth_backends.EmailAuthModelBackend',
+    'utils.auth.backends.EmailAuthModelBackend',
 )
+
+
+# Django Simple Captcha
+# http://django-simple-captcha.readthedocs.io/en/latest/
+
+CAPTCHA_LENGTH = 4
+CAPTCHA_FONT_SIZE = 25
+CAPTCHA_IMAGE_SIZE = (100, 25)
+CAPTCHA_BACKGROUND_COLOR = '#ffffff'
+CAPTCHA_FOREGROUND_COLOR = '#001100'
+CAPTCHA_CHALLENGE_FUNCT = 'captcha.helpers.random_char_challenge'
+CAPTCHA_NOISE_FUNCTIONS = ('captcha.helpers.noise_arcs','captcha.helpers.noise_dots',)
+CAPTCHA_TIMEOUT = 5
