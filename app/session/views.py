@@ -26,17 +26,18 @@ class SessionView(View):
             'captcha_key': captcha_key,
             'captcha_url': captcha_url,
         }
-        return render(request, 'session/login.html', context)
+        return render(request, 'login.html', context)
 
     @method_decorator(nonlogin_required)
     def post(self, request):
-        json_data = json.loads(request.body)
-        form = SessionLoginForm(json_data)
+        data = json.loads(request.body)
+        form = SessionLoginForm(data)
         captcha_key = CaptchaStore.generate_key()
         captcha_url = captcha_image_url(captcha_key)
         if form.is_valid():
-            username = json_data.get('username')
-            password = json_data.get('password')
+            data = form.cleaned_data
+            username = data.get('username')
+            password = data.get('password')
             user = authenticate(username=username, password=password)
             if user:
                 login(request, user)
@@ -48,14 +49,14 @@ class SessionView(View):
                     'captcha_key': captcha_key,
                     'captcha_url': captcha_url,
                 }
-                return render(request, 'session/login.html', context)
+                return render(request, 'login.html', context)
         else:
             context = {
                 'form': form,
                 'captcha_key': captcha_key,
                 'captcha_url': captcha_url,
             }
-            return render(request, 'session/login.html', context)
+            return render(request, 'login.html', context)
 
     @method_decorator(login_required(redirect_field_name=None, login_url='/session/'))
     def delete(self, request):
