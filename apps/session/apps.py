@@ -5,4 +5,4 @@ from django.apps import AppConfig
 
 
 class SessionConfig(AppConfig):
-    name = 'app.session'
+    name = 'apps.session'

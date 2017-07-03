@@ -19,5 +19,5 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^captcha/', include('captcha.urls')),
-    url(r'^session/', include('app.session.urls', namespace='session')),
+    url(r'^session/', include('apps.session.urls', namespace='session')),
 ]
