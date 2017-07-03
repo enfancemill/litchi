@@ -12,7 +12,7 @@ from django.views import View
 from captcha.helpers import captcha_image_url
 from captcha.models import CaptchaStore
 
-from utils.decorators import nonlogin_required
+from logic.utils.decorators import nonlogin_required
 from .forms import SessionLoginForm
 
 

@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from django.contrib.auth.backends import ModelBackend
 
-from app.users.models import Member
+from logic.db.litchi.models import Member
 
 
 class EmailAuthModelBackend(ModelBackend):

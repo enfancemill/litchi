@@ -38,8 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'captcha',
-    'app.users.apps.UsersConfig',
-    'app.session.apps.SessionConfig',
+    'logic.db.litchi.apps.LitchiConfig',
+    'apps.users.apps.UsersConfig',
+    'apps.session.apps.SessionConfig',
 ]
 
 MIDDLEWARE = [
@@ -145,10 +146,10 @@ EMAIL_USE_TLS = False
 # Auth
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth
 
-AUTH_USER_MODEL = 'users.Member'
+AUTH_USER_MODEL = 'litchi.Member'
 
 AUTHENTICATION_BACKENDS = (
-    'utils.auth.backends.EmailAuthModelBackend',
+    'logic.utils.auth.EmailAuthModelBackend',
 )
 
 
