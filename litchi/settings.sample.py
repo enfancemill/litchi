@@ -149,7 +149,7 @@ EMAIL_USE_TLS = False
 AUTH_USER_MODEL = 'litchi.Member'
 
 AUTHENTICATION_BACKENDS = (
-    'logic.utils.auth.EmailAuthModelBackend',
+    'logic.ext_django.auth.EmailAuthModelBackend',
 )
 
 
@@ -157,8 +157,8 @@ AUTHENTICATION_BACKENDS = (
 # http://django-simple-captcha.readthedocs.io/en/latest/
 
 CAPTCHA_LENGTH = 4
-CAPTCHA_FONT_SIZE = 25
-CAPTCHA_IMAGE_SIZE = (100, 25)
+CAPTCHA_FONT_SIZE = 20
+CAPTCHA_IMAGE_SIZE = (84, 40)
 CAPTCHA_BACKGROUND_COLOR = '#ffffff'
 CAPTCHA_FOREGROUND_COLOR = '#001100'
 CAPTCHA_CHALLENGE_FUNCT = 'captcha.helpers.random_char_challenge'

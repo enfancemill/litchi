@@ -1,0 +1,49 @@
+/* OverRide Bootstrap */
+.btn-lg {
+  height: 42px;
+  padding: 6px 12px;
+  font-size: 14px;
+  border-color: #e1e6f0;
+  border-radius: 4px;
+}
+.btn-primary {
+  background-color: #1989fa;
+  border-color: #1989fa;
+}
+.btn-primary:hover {
+  background-color: #0577ea;
+  border-color: #0577ea;
+}
+.form-control:-ms-input-placeholder {
+  color: #b8c7e5;
+  font-weight: 400;
+  opacity: 1;
+}
+.form-control::-webkit-input-placeholder {
+  color: #b8c7e5;
+  font-weight: 400;
+  opacity: 1;
+}
+.form-group {
+  margin-bottom: 20px;
+}
+.navbar-brand {
+  margin-right: 20px;
+  font-size: 16px;
+}
+.navbar-default {
+  background-color: #fff;
+}
+.input-lg {
+  height: 42px;
+  padding: 6px 12px;
+  font-size: 14px;
+  border-color: #e1e6f0;
+  border-radius: 4px;
+}
+.input-group-addon {
+  min-width: 85px;
+  padding: 0px;
+  font-size: 12px;
+  background-color: #fff;
+}
